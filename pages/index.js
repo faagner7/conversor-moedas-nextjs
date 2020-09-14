@@ -21,7 +21,6 @@ export default function Home() {
         <Conversor moedaA="EUR" moedaB="BRL" />
         <Conversor moedaA="BRL" moedaB="CAD" />
       </ConversorArea>
-
     </Container>
   )
 }
@@ -54,5 +53,4 @@ const ConversorArea = styled.div`
     width: 100%;
     flex-direction: column;
 }
-
 `;
