@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Conversor de moedas utilizando o nextJs, styled-components e axios consumindo a api https://free.currencyconverterapi.com/
+
+
 ## Getting Started
 
 First, run the development server:
