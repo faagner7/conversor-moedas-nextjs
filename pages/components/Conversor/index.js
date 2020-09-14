@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import axios from 'axios';
+import OverlayLoading from '../OverlayLoading';
+
 import styled from 'styled-components';
 
 export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
     const [valueMoeda, setValueMoeda] = useState('');
     const [cotacao, setCotacao] = useState(null);
     const [newValue, setNewValue] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     function handleConvert() {
+        setLoading(true);
         const de_para = `${moedaA}_${moedaB}`;
         console.log(de_para);
         const url =
@@ -21,11 +25,13 @@ export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
             setCotacao((parseFloat(currentCotacao).toFixed(2)));
             const valorConvertido = parseFloat(currentCotacao * valueMoeda).toFixed(2);
             setNewValue(valorConvertido);
+            setLoading(false);
         })
     }
 
     return (
         <Card>
+            {loading && <OverlayLoading />}
             <TitleWrapper>
                 <Title>{moedaA}</Title>
                 <Title style={{ marginBottom: 20 }}>
@@ -68,9 +74,9 @@ const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   min-height: 150px;
   height: auto;
-  /* min-width: 300px; */
   width: 100%;
   text-align: center;
+  position: relative;
 
   .btn {
     background-color: #0070f3;
