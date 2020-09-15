@@ -24,16 +24,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
+<<<<<<< HEAD
   const classes = useStyles();
+=======
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
   const [valueMoeda, setValueMoeda] = useState('');
   const [cotacao, setCotacao] = useState(null);
   const [newValue, setNewValue] = useState(null);
   const [loading, setLoading] = useState(false);
+<<<<<<< HEAD
   const [open, setOpen] = React.useState(false);
+=======
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
 
   function handleConvert() {
     setLoading(true);
     const de_para = `${moedaA}_${moedaB}`;
+<<<<<<< HEAD
+=======
+    console.log(de_para);
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
     const url = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=ultra&apiKey=1934329ac124eb701bcc`;
     axios
       .get(url)
@@ -42,6 +52,10 @@ export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
       })
       .then((response) => {
         const currentCotacao = response[de_para];
+<<<<<<< HEAD
+=======
+        console.log(currentCotacao);
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
         setCotacao(parseFloat(currentCotacao).toFixed(2));
         const valorConvertido = parseFloat(currentCotacao * valueMoeda).toFixed(
           2
@@ -50,6 +64,7 @@ export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
         setLoading(false);
       });
   }
+<<<<<<< HEAD
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
@@ -80,6 +95,11 @@ export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
           </Alert>
         </Snackbar>
       </div>
+=======
+
+  return (
+    <Card>
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
       {loading && <OverlayLoading />}
       <TitleWrapper>
         <Title>{moedaA}</Title>
@@ -88,7 +108,10 @@ export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
       </TitleWrapper>
       <CardWrapper>
         <TextField
+<<<<<<< HEAD
           disabled={loading}
+=======
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
           label="Valor"
           size="small"
           variant="outlined"
@@ -96,11 +119,16 @@ export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
           onChange={(e) => setValueMoeda(e.target.value)}
           className="inputValue"
         />
+<<<<<<< HEAD
         <Button disabled={loading} onClick={handleConvert} className="btn">
+=======
+        <Button onClick={handleConvert} className="btn">
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
           Converter
         </Button>
       </CardWrapper>
       <Results>
+<<<<<<< HEAD
         {newValue && (
           <>
             <div
@@ -152,6 +180,10 @@ export default function Conversor({ moedaA = 'BRL', moedaB = 'USD' }) {
             </IconButton>
           </>
         )}
+=======
+        {newValue && <Text>Valor Convertido: {newValue}</Text>}
+        {cotacao && <SubText>Cotação: {cotacao}</SubText>}
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
       </Results>
     </Card>
   );
@@ -178,13 +210,13 @@ const Card = styled.div`
     background-color: #0070f3;
     color: #fff;
     height: 40px;
-    padding: 16px;
   }
 
   .btn:hover {
     transition: 0.5s;
     background-color: #fff;
     color: #0070f3;
+<<<<<<< HEAD
   }
   :hover,
   :focus {
@@ -192,6 +224,16 @@ const Card = styled.div`
     border-color: #0070f3;
   }
 
+=======
+  }
+
+  :hover,
+  :focus {
+    color: #0070f3;
+    border-color: #0070f3;
+  }
+
+>>>>>>> 385e0602e316d33444550c8e5c7fca3a1b3fae8e
   .inputValue {
     margin-right: 0.8rem;
   }
