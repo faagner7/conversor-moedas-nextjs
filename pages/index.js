@@ -1,7 +1,6 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import styled from 'styled-components';
 import Conversor from './components/Conversor';
-
 
 export default function Home() {
   return (
@@ -10,9 +9,7 @@ export default function Home() {
         <title>Conversor de Moedas - NextJS</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Title>
-        Conversor de Moedas
-      </Title>
+      <Title>Conversor de Moedas</Title>
       <ConversorArea>
         <Conversor moedaA="USD" moedaB="BRL" />
         <Conversor moedaA="BRL" moedaB="USD" />
@@ -22,11 +19,11 @@ export default function Home() {
         <Conversor moedaA="BRL" moedaB="CAD" />
       </ConversorArea>
     </Container>
-  )
+  );
 }
 
 const Container = styled.div`
- min-height: 100vh;
+  min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -52,5 +49,5 @@ const ConversorArea = styled.div`
   @media (max-width: 600px) {
     width: 100%;
     flex-direction: column;
-}
+  }
 `;
