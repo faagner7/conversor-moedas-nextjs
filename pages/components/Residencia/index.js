@@ -98,13 +98,15 @@ export default function Residencia() {
             <Table className={classes.table} aria-label="a dense table">
               <TableHead>
                 <TableRow>
+                  <TableCell>Classificação</TableCell>
                   <TableCell>Nome</TableCell>
                   <TableCell>Nota</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {listData.map((data) => (
-                  <TableRow key={data.nome}>
+                {listData.map((data, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{`${index + 1}º`}</TableCell>
                     <TableCell>{data.nome}</TableCell>
                     <TableCell align="left">{data.notaFinal}</TableCell>
                   </TableRow>
