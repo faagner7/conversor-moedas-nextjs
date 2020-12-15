@@ -9,13 +9,12 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Input,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    minWidth: '300px !important',
   },
 });
 
@@ -96,11 +95,7 @@ export default function Residencia() {
       {listData.length > 0 && (
         <Results>
           <TableContainer component={Paper}>
-            <Table
-              className={classes.table}
-              size="small"
-              aria-label="a dense table"
-            >
+            <Table className={classes.table} aria-label="a dense table">
               <TableHead>
                 <TableRow>
                   <TableCell>Nome</TableCell>
