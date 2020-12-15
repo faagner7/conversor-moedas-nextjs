@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import Conversor from './components/Conversor';
+import Residencia from './components/Residencia';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Conversor moedaA="EUR" moedaB="BRL" />
         <Conversor moedaA="BRL" moedaB="CAD" />
       </ConversorArea>
+      <Residencia />
     </Container>
   );
 }
