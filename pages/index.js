@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import Conversor from './components/Conversor';
-import Residencia from './components/Residencia';
+import Covid from './components/Covid';
 
 export default function Home() {
   return (
@@ -12,14 +12,14 @@ export default function Home() {
       </Head>
       <Title>Conversor de Moedas</Title>
       <ConversorArea>
-        <Conversor moedaA="USD" moedaB="BRL" />
+        <Covid />
+        {/* <Conversor moedaA="USD" moedaB="BRL" />
         <Conversor moedaA="BRL" moedaB="USD" />
         <Conversor moedaA="CAD" moedaB="BRL" />
         <Conversor moedaA="BRL" moedaB="CAD" />
         <Conversor moedaA="EUR" moedaB="BRL" />
-        <Conversor moedaA="BRL" moedaB="CAD" />
+        <Conversor moedaA="BRL" moedaB="CAD" /> */}
       </ConversorArea>
-      <Residencia />
     </Container>
   );
 }
