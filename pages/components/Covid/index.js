@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import moment from 'moment';
+import 'moment/locale/pt-br';
+
 import OverlayLoading from '../OverlayLoading';
+
+moment.locale('pt-br');
 
 function Covid() {
   const [dados, setDados] = useState(null);
@@ -33,6 +38,9 @@ function Covid() {
           </div>
           <div>
             Recuperados: {dados.recovered}
+          </div>
+          <div>
+            Data de atualização: {moment(dados.updated_at).format('LLLL')}
           </div>
         </div>
       )}
